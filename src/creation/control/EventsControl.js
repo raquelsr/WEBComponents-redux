@@ -1,6 +1,6 @@
 import { store } from '../../AirElement.js';
 
-const NEW_EVENT_CREATED = 'NEW_EVENT_CREATED';
+export const NEW_EVENT_CREATED = 'NEW_EVENT_CREATED';
 
 const createEvent = payload => {
   store.dispatch({
