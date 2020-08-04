@@ -1,4 +1,5 @@
 import { render, html } from '../../lib/lit-html.js';
+import { createEvent } from '../control/EventsControl.js';
 
 class NewEvent extends HTMLElement {
 
@@ -18,6 +19,7 @@ class NewEvent extends HTMLElement {
 
   newEvent() {
     console.log('Saving..', this.event);
+    createEvent(this.event);
   }
 
   onUserInput({target: {name, value}}) {
