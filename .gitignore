@@ -1,0 +1,5 @@
+/dependencies/node_modules
+/dependencies/web_modules
+/dependencies/package-lock.json
+
+.DS_Store
