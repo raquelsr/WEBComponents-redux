@@ -13,6 +13,7 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
+    "bulma": "^0.9.0",
     "lit-html": "^1.2.1",
     "snowpack": "^2.7.5"
   },

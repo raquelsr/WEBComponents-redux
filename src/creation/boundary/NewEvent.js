@@ -16,7 +16,7 @@ class NewEvent extends AirElement {
       ${this.input({name: 'link'})}
       ${this.input({name: 'eventname'})}
       ${this.input({name: 'description'})}
-      <button @click=${e => this.newEvent(e)}>Create</button>
+      <button class="button is-primary" @click=${e => this.newEvent(e)}>Create</button>
     </form>
     `;
   }
@@ -24,7 +24,7 @@ class NewEvent extends AirElement {
   input({name, placeholder=name}) {
     return html `
       <label>${placeholder}
-      <input required name=${name} @change=${e => this.onUserInput(e)} placeholder=${placeholder}>
+      <input class="input is-primary" required name=${name} @change=${e => this.onUserInput(e)} placeholder=${placeholder}>
       </label>
     `;
   }
