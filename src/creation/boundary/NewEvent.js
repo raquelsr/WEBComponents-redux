@@ -12,15 +12,22 @@ class NewEvent extends AirElement {
   view() {
     console.log('UPDATED');
     return html `
-      <input name="eventname" @change=${e => this.onUserInput(e)} placeholder="name">
-      <input name="description" @change=${e => this.onUserInput(e)} placeholder="description">
-      <button @click=${_ => this.newEvent()}>Create</button>
+    <form>
+      <input required name="eventname" @change=${e => this.onUserInput(e)} placeholder="name">
+      <input required name="description" @change=${e => this.onUserInput(e)} placeholder="description">
+      <button @click=${e => this.newEvent(e)}>Create</button>
+    </form>
     `;
   }
 
-  newEvent() {
-    console.log('Saving..', this.event);
-    createEvent(this.event);
+  newEvent(e) {
+    const { target: { form }} = e;
+    e.preventDefault();
+    form.reportValidity();
+    if (form.checkValidity()) {
+      createEvent(this.event);
+
+    }
   }
 
   onUserInput({target: {name, value}}) {
