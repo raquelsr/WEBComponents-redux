@@ -17,7 +17,12 @@ const GOOGLE_DEVTOOL = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEV
 
 const store = createStore(events, GOOGLE_DEVTOOL);
 
-class AirElement extends HTMLElement {
+export default class AirElement extends HTMLElement {
+
+  constructor() {
+    super();
+    this.state = {};
+  }
 
   connectedCallback() {
     store.subscribe(_ => this.triggerViewUpdate());
@@ -25,6 +30,7 @@ class AirElement extends HTMLElement {
   }
 
   triggerViewUpdate() {
+    this.state = store.getState();
     const template = this.view();
     render(template, this);
   }
@@ -32,5 +38,4 @@ class AirElement extends HTMLElement {
   view() { }
 }
 
-export default AirElement;
 export { store };
