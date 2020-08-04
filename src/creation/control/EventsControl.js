@@ -1,4 +1,4 @@
-import { store } from '../../AirElement.js';
+import store from '../../store.js';
 
 export const NEW_EVENT_CREATED = 'NEW_EVENT_CREATED';
 
