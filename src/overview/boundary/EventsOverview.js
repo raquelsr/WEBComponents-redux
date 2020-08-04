@@ -4,10 +4,14 @@ import AirElement from '../../AirElement.js';
 class EventsOverview extends AirElement {
 
   view() {
-    console.log('UPDATED2', this.state);
-
+    const eventList = this.state.events;
      return html `
-      <h2>Hello overview </h2>
+     <ol>
+      ${eventList.map(({eventname, description}) => html `
+        <li> 
+          ${eventname} => ${description}
+        </li>`)}
+     </ol>
     `;
   }
 }
