@@ -5,7 +5,8 @@ import '../../filter/boundary/EventsFilter.js';
 class EventsOverview extends AirElement {
 
   view() {
-    const eventList = this.state.events;
+    const { events: { events:eventList },filter } = this.state;
+    console.log('..EO.',filter);
      return html `
      <a-events-filter></a-events-filter>
      <ol>
@@ -15,10 +16,6 @@ class EventsOverview extends AirElement {
         </li>`)}
      </ol>
     `;
-  }
-
-  extractState(redux) {
-    return redux.events;
   }
 }
 
