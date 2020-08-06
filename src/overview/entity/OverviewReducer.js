@@ -1,6 +1,6 @@
 export const EVENT_SELECTED = 'EVENT_SELECTED';
 export const DELETE_SELECTED_EVENTS = 'DELETE_SELECTED_EVENTS';
-import { updateSelection } from './EventOperations.js';
+import { updateSelection, deleteSelected } from './EventOperations.js';
 
 const overview = (state = {events: []}, action) => {
   const { type, payload } = action;
@@ -11,8 +11,9 @@ const overview = (state = {events: []}, action) => {
       return state;
 
     case DELETE_SELECTED_EVENTS:
-      debugger
-      return state;
+      return {
+        events: deleteSelected(state.events)
+      }
   }
   console.log(state, action);
   return state;
