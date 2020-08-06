@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from './lib/redux.js';
 import events from './creation/entity/EventsReducer.js';
 import filter from './filter/entity/FilterReducer.js';
-import {} from './overview/entity/OverviewReducer.js';
+import overview from './overview/entity/OverviewReducer.js';
 import { load } from './localstorage/StorageControl.js';
 
 const deepCopy = input => JSON.parse(JSON.stringify(input));
