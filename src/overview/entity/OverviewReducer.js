@@ -1,13 +1,6 @@
 export const EVENT_SELECTED = 'EVENT_SELECTED';
-
-const findEvent = (list, eventname) => {
-  return list.find(e => e.eventname === eventname);
-}
-
-const updateSelection = (list, eventname, checked) => {
-  const event = findEvent(list, eventname);
-  event['checked'] = checked;
-}
+export const DELETE_SELECTED_EVENTS = 'DELETE_SELECTED_EVENTS';
+import { updateSelection } from './EventOperations.js';
 
 const overview = (state = {events: []}, action) => {
   const { type, payload } = action;
@@ -15,6 +8,9 @@ const overview = (state = {events: []}, action) => {
     case EVENT_SELECTED:
       const {name, checked} = payload;
       updateSelection(state.events, name, checked);
+      return state;
+
+    case DELETE_SELECTED_EVENTS:
       return state;
   }
   console.log(state, action);
