@@ -14,3 +14,7 @@ export const deleteSelected = (list) => {
 export const findSelected = (list) => {
   return list.filter(event => event.checked);
 }
+
+export const areSomeSelected = (list) => {
+  return list.some(event => event.checked);
+}

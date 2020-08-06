@@ -31,7 +31,7 @@ class NewEvent extends AirElement {
   input({name, placeholder=name}) {
     return html `
       <label>${placeholder}
-      <input .value=${this.event[0][name] || null} class="input is-primary" required name=${name} @change=${e => this.onUserInput(e)} placeholder=${placeholder}>
+      <input .value=${this.event[name] || null} class="input is-primary" required name=${name} @change=${e => this.onUserInput(e)} placeholder=${placeholder}>
       </label>
     `;
   }
