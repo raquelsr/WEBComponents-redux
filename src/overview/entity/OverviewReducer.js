@@ -11,6 +11,7 @@ const overview = (state = {events: []}, action) => {
       return state;
 
     case DELETE_SELECTED_EVENTS:
+      debugger
       return state;
   }
   console.log(state, action);
