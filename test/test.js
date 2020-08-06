@@ -1,10 +1,11 @@
-mocha.setup('bdd');
+import matchesCriteria from '../src/overview/entity/Filter.js';
 
+mocha.setup('bdd');
 const assert = chai.assert;
 
-describe('hello', () => {
-  it('world', () => {
-    assert.isTrue(true);
+describe('overview.entity.Filter', function() {
+  it('matchesCriteria_true_emptyEvent', function() {
+    assert.isTrue(matchesCriteria({}));
   });
 });
 
