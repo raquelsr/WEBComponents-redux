@@ -5,13 +5,18 @@ import { onFilterChange } from '../control/FilterControl.js';
 export default class EventsFilter extends AirElement {
 
   view() {
+    const { filter } = this.state;
     return html `
-      <input class="input" placeholder="keyword" @keyup=${e => this.onFilter(e)}>
+      <input class="input" placeholder="keyword" .value="${filter}" @keyup=${e => this.onFilter(e)}>
     `;
   }
 
   onFilter({ target: {value}}) {
     onFilterChange(value);
+  }
+  
+  extractState(redux) {
+    return redux.filter;
   }
 }
 
