@@ -35,7 +35,6 @@ class NewEvent extends AirElement {
     form.reportValidity();
     if (form.checkValidity()) {
       createEvent(this.event);
-
     }
   }
 
