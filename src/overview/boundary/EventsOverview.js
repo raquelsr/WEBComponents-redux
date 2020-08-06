@@ -2,6 +2,7 @@ import { html, render } from '../../lib/lit-html.js';
 import AirElement from '../../AirElement.js';
 import '../../filter/boundary/EventsFilter.js';
 import matchesCriteria from '../entity/Filter.js';
+import { eventSelected } from '../control/EventsControl.js';
 
 class EventsOverview extends AirElement {
 
@@ -19,7 +20,7 @@ class EventsOverview extends AirElement {
       <tbody>
         ${eventList.filter(e => matchesCriteria(e, filter)).map(({eventname, description, link}) => html `
         <tr> 
-          <td>${eventname}</td>
+          <td><input name="${eventname}" type="checkbox" @click=${e => this.triggerSelection(e)}> ${eventname}</td>
           <td>${description}</td>
           <td>${link}</td>
       </tr>
@@ -28,6 +29,11 @@ class EventsOverview extends AirElement {
     </table>
  
     `;
+  }
+
+  triggerSelection(e) {
+    const {target: {name, checked}} = e;
+    eventSelected(name, checked);
   }
 }
 
