@@ -11,7 +11,16 @@ const copyingEvent = (state, action) => {
   return deepCopy(combinedReducer(state, action));
 }
 
-const initialState = load();
+let initialState = load();
+if (!initialState) {
+  initialState = {
+    events: {
+      events:[]
+    },
+    filter: {
+      filter:""}
+    }
+}
 
 const GOOGLE_DEVTOOL = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const store = createStore(copyingEvent, initialState, GOOGLE_DEVTOOL);
