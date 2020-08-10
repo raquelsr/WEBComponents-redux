@@ -1,4 +1,4 @@
-# webcomponent-redux
+# Web Components with Redux
 
 Basic app using **web components** and **redux**.
 Following a tutorial to learn.
