@@ -2,7 +2,18 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10%;
+}
+
+nav {
+  margin-top: 5%;
+  margin-bottom: 7%;
+  background-color: bisque;
+  width: 70%;
+  text-align: center;
+}
+
+nav a {
+  margin-right: 5%;
 }
 
 a-newevent form {
@@ -14,4 +25,18 @@ a-newevent form {
 a-events-overview {
   width: 80%;
   padding-top: 10%;
+}
+
+drag-n-drop .dropzone {
+  width: 200px;
+  height: 200px;
+  background-color: khaki;
+  border: 1px solid black;
+}
+
+drag-item div {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  background-color: cyan;
 }
