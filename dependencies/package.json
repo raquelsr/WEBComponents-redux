@@ -14,6 +14,7 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
+    "@svgdotjs/svg.js": "^3.0.16",
     "@vaadin/router": "^1.7.2",
     "bulma": "^0.9.0",
     "lit-html": "^1.2.1",
@@ -23,6 +24,7 @@
     "install": [
       "redux",
       "lit-html",
+      "@svgdotjs/svg.js",
       "@vaadin/router"
     ]
   }
