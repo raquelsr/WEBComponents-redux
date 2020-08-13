@@ -4,6 +4,7 @@ import { Router } from './lib/@vaadin/router.js';
 import './creation/boundary/NewEventView.js';
 import './preview/boundary/Preview.js';
 import './dragNdrop/boundary/DragNDrop.js';
+import './resize/Resize.js';
 
 store.subscribe(() => {
   const state = store.getState();
@@ -17,5 +18,6 @@ router.setRoutes([
   {path: '/',     component: 'a-neweventview'},
   {path: '/preview',  component: 'a-preview'},
   {path: '/dragndrop', component: 'drag-n-drop'},
+  {path: '/resize', component: 'svg-resize'},
   {path: '(.*)', component: 'a-neweventview' }
 ]);
