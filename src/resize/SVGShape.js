@@ -1,14 +1,16 @@
 import { SVG } from '../lib/@svgdotjs/svgjs.js'
 
 export const createPinkSquare = (zone) => {
-    const draw = SVG().addTo(zone).size(100, 100);
+    const draw = SVG().addTo(zone);
     const rect = draw.rect(50, 50).attr({ fill: '#f06' });
+    return draw;
 }
 
 export const createCyanSquare = (zone) => {
     const draw = SVG().addTo(zone).size(300, 300);
     const rect = draw.rect(100, 100).move(50, 50).fill('cyan');
     draw.text('AAA').rotate(180).move(-60, -70);
+    return draw;
 }
 
 export const createBook = (zone) => {
@@ -17,4 +19,5 @@ export const createBook = (zone) => {
     polyline.fill('black').move(170, 50);
     polyline.stroke({ color: 'black', width: 1, linecap: 'round', linejoin: 'round' });
     const text = polyline.text('Prueba.').rotate(180);
+    return draw;
 }
