@@ -4,7 +4,7 @@ import { Router } from './lib/@vaadin/router.js';
 import './creation/boundary/NewEventView.js';
 import './preview/boundary/Preview.js';
 import './dragNdrop/boundary/DragNDrop.js';
-import './resize/Resize.js';
+import './resize/SVGResize.js';
 
 store.subscribe(() => {
   const state = store.getState();

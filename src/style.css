@@ -40,3 +40,12 @@ drag-item div {
   border: 1px solid black;
   background-color: cyan;
 }
+
+svg-resize p {
+  background: lime; 
+  height: 200px; 
+  width: 300px; 
+}
+
+svg-resize p.resizable { background: cyan; position: relative; }
+svg-resize p .resizer { width: 10px; height: 10px; background: blue; position:absolute; right: 0; bottom: -0; cursor: se-resize; }
